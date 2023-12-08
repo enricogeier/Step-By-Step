@@ -28,11 +28,13 @@ public class Player : MonoBehaviour
     {
         level = GetComponentInParent<Level>();
         characterController.Move(level.spawn_position - transform.position);
+
     }
 
     // Update is called once per frame
     void Update()
     {
+
         if(transform.position.y < level.BORDER_Y)
         {
             this.gameObject.layer = LayerMask.NameToLayer("Teleport Back");

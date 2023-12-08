@@ -111,8 +111,8 @@ public class Platform : MonoBehaviour
             if (playerOnPlatform && player != null)
             {
 
-                player.GetComponent<CharacterController>().transform.position += new Vector3(deltaPosition.x, 0.0f, deltaPosition.y);
-                player.GetComponent<CharacterController>().Move(moveDirection * moveSpeed * Time.deltaTime);
+                //player.GetComponent<CharacterController>().transform.position += new Vector3(deltaPosition.x, 0.0f, deltaPosition.y);
+                //player.GetComponent<CharacterController>().Move(moveDirection * moveSpeed * Time.deltaTime);
 
 
 

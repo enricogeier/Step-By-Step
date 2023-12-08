@@ -5,6 +5,8 @@ using UnityEngine;
 public class Level: MonoBehaviour
 {
     List<bool> table_list = new List<bool>();
+
+    private Finish finish;
     
 
     [SerializeField] public int amount_of_tables;
@@ -15,6 +17,8 @@ public class Level: MonoBehaviour
     public void open_next_level()
     {
         Debug.LogWarning("Next Level has been activated");
+
+        finish.activate();
     }
     public void check_table_list()
     {
