@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Platform : MonoBehaviour
+
 {
 
     private Vector3 startPosition;
@@ -32,6 +33,9 @@ public class Platform : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+	//new
+	other.transform.SetParent(transform);
+
         if(other.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
             playerOnPlatform = true;
@@ -39,7 +43,8 @@ public class Platform : MonoBehaviour
     }
 
     private void OnTriggerExit(Collider other)
-    {
+    {	
+other.transform.SetParent(null);
         if(other.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
             playerOnPlatform = false;
@@ -68,7 +73,7 @@ public class Platform : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
        
         if(rotateX)
@@ -111,8 +116,15 @@ public class Platform : MonoBehaviour
             if (playerOnPlatform && player != null)
             {
 
-                //player.GetComponent<CharacterController>().transform.position += new Vector3(deltaPosition.x, 0.0f, deltaPosition.y);
-                //player.GetComponent<CharacterController>().Move(moveDirection * moveSpeed * Time.deltaTime);
+	Vector3 platformMovement = transform.position - lastPosition;
+	player.transform.position += platformMovement;
+	lastPosition = transform.position;
+
+	 //Vector3 deltaPosition = transform.position - startPosition;
+            		//player.position += deltaPosition;
+	//player.position += deltaPosition;
+                 //player.GetComponent<CharacterController>().transform.position += new Vector3(deltaPosition.x, 0.0f, deltaPosition.y);
+                 //player.GetComponent<CharacterController>().Move(moveDirection * moveSpeed * Time.deltaTime);
 
 
 
