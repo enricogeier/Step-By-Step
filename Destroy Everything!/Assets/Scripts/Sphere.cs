@@ -1,3 +1,5 @@
+
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -19,9 +21,9 @@ public class Sphere : MonoBehaviour
 
     private void Update()
     {
-        if (transform.position.y < level.BORDER_Y)
+        if (level != null && transform.position.y < level.BORDER_Y)
         {
-            Destroy(this);
+            Destroy(gameObject);
         }
     }
 

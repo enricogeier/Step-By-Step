@@ -1,33 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-
-
-
-
-
 public class Table : MonoBehaviour
 {
     private bool activated = false;
+    private Level level;
+
+
     [SerializeField] public int id;
 
 
 
     private void OnTriggerEnter(Collider other)
     {
-        
+
         Sphere sphere = other.gameObject.GetComponent<Sphere>();
-        if(sphere != null)
+        if (sphere != null)
         {
-            if(sphere.id == id && !activated)
+            if (sphere.id == id && !activated)
             {
                 activated = true;
-                
+
                 // TODO: shader for table instead
                 GetComponent<MeshRenderer>().material.color = Color.white;
 
-                GetComponentInParent<Level>().activate_table();
+                level.activate_table();
 
             }
             else
@@ -35,6 +32,12 @@ public class Table : MonoBehaviour
                 Destroy(other.gameObject);
             }
         }
+
+    }
+
+    private void Start()
+    {
+        level = GetComponentInParent<Level>();
 
     }
 

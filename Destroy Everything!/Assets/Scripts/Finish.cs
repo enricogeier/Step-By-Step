@@ -12,17 +12,25 @@ public class Finish : MonoBehaviour
         endChallenge.activate();
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        // start next level
+
+
+
+    }
 
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        endChallenge = GetComponentInChildren<EndChallenge>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }
+
