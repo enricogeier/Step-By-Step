@@ -3144,9 +3144,9 @@ GameObject:
   - component: {fileID: 964800630}
   - component: {fileID: 964800634}
   - component: {fileID: 964800633}
-  - component: {fileID: 964800632}
   - component: {fileID: 964800631}
   - component: {fileID: 964800635}
+  - component: {fileID: 964800632}
   m_Layer: 3
   m_Name: Finish
   m_TagString: Untagged
@@ -3267,20 +3267,19 @@ MonoBehaviour:
   m_Teleporting:
     m_PersistentCalls:
       m_Calls: []
---- !u!64 &964800632
-MeshCollider:
+--- !u!65 &964800632
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 964800629}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+  serializedVersion: 2
+  m_Size: {x: 9.820129, y: 2.220446e-16, z: 10}
+  m_Center: {x: 0.0899353, y: 0, z: 0}
 --- !u!23 &964800633
 MeshRenderer:
   m_ObjectHideFlags: 0
