@@ -19,7 +19,7 @@ public class Player : MonoBehaviour
 
     private bool IsGrounded()
     {
-        return Physics.CheckSphere(transform.position, 0.5f, groundLayers);
+        return Physics.CheckSphere(transform.position, 0.1f, groundLayers);
     }
 
 
@@ -35,7 +35,7 @@ public class Player : MonoBehaviour
     void Update()
     {
 
-        if(transform.position.y < level.BORDER_Y)
+        if (transform.position.y < level.BORDER_Y)
         {
             this.gameObject.layer = LayerMask.NameToLayer("Teleport Back");
             movement.y = 0.0f;
@@ -74,5 +74,3 @@ public class Player : MonoBehaviour
 
 
 }
-
-

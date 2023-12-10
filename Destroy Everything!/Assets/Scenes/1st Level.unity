@@ -2375,7 +2375,7 @@ GameObject:
   - component: {fileID: 726063080}
   - component: {fileID: 726063079}
   - component: {fileID: 726063078}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Teleportation Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
