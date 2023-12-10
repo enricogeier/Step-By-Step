@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Finish : MonoBehaviour
 {
 
     private EndChallenge endChallenge;
+
+   
 
     public void activate()
     {
@@ -15,6 +18,12 @@ public class Finish : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         // start next level
+
+        Player player = other.gameObject.GetComponent<Player>();
+        if (player != null)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
 
 
 
