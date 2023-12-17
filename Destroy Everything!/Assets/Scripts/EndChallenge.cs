@@ -22,6 +22,7 @@ public class EndChallenge : MonoBehaviour
 
     public void activate()
     {
+        Debug.Log("end activate");
         activated = true;
     }
 

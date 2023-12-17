@@ -526,6 +526,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a982ad7a6a7e0c64aa37c053e161c68c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  finish: {fileID: 0}
   amount_of_tables: 4
   BORDER_Y: -6
   spawn_position: {x: 8.32, y: 0.07, z: -0.56}
@@ -5017,7 +5018,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 73b1e73e63841d34696c804cb0f7f958, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.49
+      value: 0.07
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 73b1e73e63841d34696c804cb0f7f958, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5054,6 +5055,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 73b1e73e63841d34696c804cb0f7f958, type: 3}
       propertyPath: m_Name
       value: Teleportation Area
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 73b1e73e63841d34696c804cb0f7f958, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 73b1e73e63841d34696c804cb0f7f958, type: 3}

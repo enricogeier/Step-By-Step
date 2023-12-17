@@ -7,7 +7,7 @@ public class Level : MonoBehaviour
 {
     List<bool> table_list = new List<bool>();
 
-    private Finish finish;
+    [SerializeField] private Finish finish;
 
 
     [SerializeField] public int amount_of_tables;
@@ -17,6 +17,7 @@ public class Level : MonoBehaviour
 
     public void open_next_level()
     {
+        Debug.Log("open next level");
         finish.activate();
     }
     public void check_table_list()
@@ -38,6 +39,7 @@ public class Level : MonoBehaviour
 
     public void activate_table()
     {
+        Debug.Log("activated");
         table_list.Add(true);
         check_table_list();
     }
@@ -45,7 +47,6 @@ public class Level : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        finish = GetComponentInChildren<Finish>();
     }
 
     // Update is called once per frame
