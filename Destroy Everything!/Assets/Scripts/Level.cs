@@ -37,9 +37,8 @@ public class Level : MonoBehaviour
         }
     }
 
-    public void activate_table()
+    public virtual void activate_table()
     {
-        Debug.Log("activated");
         table_list.Add(true);
         check_table_list();
     }

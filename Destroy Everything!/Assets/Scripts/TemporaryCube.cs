@@ -5,31 +5,75 @@ using UnityEngine;
 public class TemporaryCube : Platform
 {
 
-    private bool wait = false;
+    private bool destroyWait = false;
+
+    private BoxCollider[] boxColliders;
+    private Renderer meshRenderer;
 
 
-    [SerializeField] private float waitTime = 2.0f;
+    [SerializeField] private float untilDestroyTime = 2.0f;
+    [SerializeField] private float respawnTime = 5.0f;
 
-    private void afterWait()
+   
+
+    private void AfterDestroyTime()
     {
-        Destroy(gameObject);
+     
+        meshRenderer.enabled = false;
+
+        
+        foreach(BoxCollider collider in boxColliders)
+        {
+            collider.enabled = false;
+            collider.enabled = false;
+        }
+
+
+        Invoke("AfterRespawnTime", respawnTime);
+
     }
+
+
+    private void AfterRespawnTime()
+    {
+        meshRenderer.enabled = true;
+
+
+        foreach (BoxCollider collider in boxColliders)
+        {
+            collider.enabled = true;
+            collider.enabled = true;
+        }
+
+
+        destroyWait = false;
+    }
+
+
+    private void Start()
+    {
+        boxColliders = GetComponents<BoxCollider>();
+        meshRenderer = GetComponent<Renderer>();
+    }
+
+
 
     private void OnTriggerEnter(Collider other)
     {
-        if(!wait)
+        if(!destroyWait)
         {
             Player player = other.gameObject.GetComponent<Player>();
             if (player != null)
             {
-                wait = true;
-               Invoke("afterWait", waitTime);
-            
+                destroyWait = true;
+                Invoke("AfterDestroyTime", untilDestroyTime);
+                       
             }
 
         }
 
     }
+
 
 
 
