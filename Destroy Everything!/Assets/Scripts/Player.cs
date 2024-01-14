@@ -29,6 +29,8 @@ public class Player : MonoBehaviour
         level = GetComponentInParent<Level>();
         characterController.Move(level.spawn_position - transform.position);
 
+
+
     }
 
     // Update is called once per frame
@@ -55,9 +57,12 @@ public class Player : MonoBehaviour
 
                 if (jump_button.action.WasPressedThisFrame())
                 {
+              
                     // Calculate initial jump velocity to reach the desired jump height.
                     // value of Physics.gravity is Vector3.DOWN
                     movement.y = Mathf.Sqrt(2 * jump_height * -Physics.gravity.y);
+                    UnityEngine.Debug.Log("Jump");
+                    
                 }
             }
 
